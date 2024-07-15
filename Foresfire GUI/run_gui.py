@@ -78,10 +78,12 @@ class GUI:
         data = json.loads(message.payload.decode())
         if "temperature" in data:
             self.table.insert("", "end", values=("","",f"Temperature: {data['temperature']}"))
+        if "pressure" in data:
+            self.table.insert("", "end", values=("","",f"Pressure: {data['pressure']}"))
         if "humidity" in data:
             self.table.insert("", "end", values=("","",f"Humidity: {data['humidity']}"))
-        if "gas" in data:
-            self.table.insert("", "end", values=("","",f"Gas: {data['gas']}"))
+        if "resistance" in data:
+            self.table.insert("", "end", values=("","",f"Resistance: {data['resistance']}"))
         if "image_available" in data:
             self.table.insert("", "end", values=("","",f"Image Available: {data['image_available']}"))
         if "image_data" in data:

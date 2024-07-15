@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 2
+names: ['fire', 'smoke']
+
+roboflow:
+  workspace: dongguk-nr7gx
+  project: forest-fire-detection-lucg0
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/dongguk-nr7gx/forest-fire-detection-lucg0/dataset/2

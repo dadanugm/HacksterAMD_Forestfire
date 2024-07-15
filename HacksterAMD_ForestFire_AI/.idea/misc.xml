@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="ryzenai-1.1-20240417-145201" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="ryzenai-1.1-20240501-183338" project-jdk-type="Python SDK" />
+</project>

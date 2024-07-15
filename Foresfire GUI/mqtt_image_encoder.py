@@ -14,7 +14,7 @@ image_available = random.choice([True, False])
 # If image is available, load and convert to base64
 image_data = None
 if image_available:
-    image_path = "Path to JPG"
+    image_path = "C:/Users/dadan/Pictures/AMD Hackster/result.jpg"
     with open(image_path, "rb") as image_file:
         image_data = image_file.read()
     base64_image = base64.b64encode(image_data).decode("utf-8")

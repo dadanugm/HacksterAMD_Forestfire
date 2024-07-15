@@ -1,0 +1,149 @@
+(ryzenai-1.1-20240501-183338) PS C:\Users\dadan\Documents\HacksterAMD_ForestFire_AI\TEST\ONNX\test> .\run.bat --e2e --vai-ep --img ..\test.jpg --voe-path C:\AMD\voe-4.0-win_amd64           
+- Running with Anaconda env python
+- VitisAIExecutionProvider:  True
+- Creating session with VitisAIExecutionProvider ...
+2024-06-24 16:13:13.5938170 [W:onnxruntime:Default, vitisai_provider_factory.cc:48 onnxruntime::VitisAIProviderFactory::CreateProvider] Construting a FlexML EP instance in Vitis AI EP
+2024-06-24 16:13:13.5977138 [W:onnxruntime:Default, vitisai_execution_provider.cc:117 onnxruntime::VitisAIExecutionProvider::SetFlexMLEPPtr] Assigning the FlexML EP pointer in Vitis AI EP
+2024-06-24 16:13:13.8045174 [W:onnxruntime:Default, vitisai_execution_provider.cc:137 onnxruntime::VitisAIExecutionProvider::GetCapability] Trying FlexML EP GetCapability
+2024-06-24 16:13:13.8084840 [W:onnxruntime:Default, flexml_execution_provider.cc:180 onnxruntime::FlexMLExecutionProvider::GetCapability] FlexMLExecutionProvider::GetCapability, C:\amd\voe\binary-modules\ResNet.flexml\flexml_bm.signature can't not be found!
+2024-06-24 16:13:13.8135367 [W:onnxruntime:Default, vitisai_execution_provider.cc:153 onnxruntime::VitisAIExecutionProvider::GetCapability] FlexML EP ignoring a non-ResNet50 graph
+WARNING: Logging before InitGoogleLogging() is written to STDERR
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:346] Vitis AI EP Load ONNX Model Success
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:347] Graph Input Node Name/Shape (1)
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:351]   img_data : [1024x1024x4]
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:357] Graph Output Node Name/Shape (4)
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:361]   3604 : [1x84x8400]
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:361]   3152 : [1x144x80x80]
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:361]   3341 : [1x144x40x40]
+I20240624 16:13:13.817852 11300 vitisai_compile_model.cpp:361]   3530 : [1x144x20x20]
+W20240624 16:13:20.353885 11300 tool_function.cpp:171] The operator named 3562, type: Selector, is not defined in XIR. XIR creates the definition of this operator automatically. You should specify the shape and the data_type of the output tensor of this operation by set_attr("shape", std::vector<int>) and set_attr("data_type", std::string)
+I20240624 16:13:22.145516 11300 compile_pass_manager.cpp:352] Compile mode: aie
+I20240624 16:13:22.145516 11300 compile_pass_manager.cpp:353] Debug mode: performance
+I20240624 16:13:22.145516 11300 compile_pass_manager.cpp:357] Target architecture: AMD_AIE2_Nx4_Overlay
+I20240624 16:13:22.146517 11300 compile_pass_manager.cpp:606] Graph name: torch-jit-export, with op num: 1198
+I20240624 16:13:22.146517 11300 compile_pass_manager.cpp:619] Begin to compile...
+0
+I20240624 16:14:03.183182 11300 PartitionPass.cpp:6479] xir::Op{name = DetectionModel::input_0, type = super_layer} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.183182 11300 PartitionPass.cpp:6479] xir::Op{name = 172, type = float2fix} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3152_fix_, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3540_post_dq_3561, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3341_fix_, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3550_post_dq_3561, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3530_fix_, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3560_post_dq_3561, type = fix2float} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3561, type = concat} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3591, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = ortshared_7_1_2_1_token_265, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = :3562:3563, type = :Split} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3562, type = Selector} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3577, type = reshape} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+W20240624 16:14:03.198807 11300 PartitionPass.cpp:6402] xir::Op{name = 3578, type = transpose} has been assigned to CPU: [Input and output data type should be XINT or INT, but now input data type: UINT8, output data type: UINT8].
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3624, type = reshape} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3579_intermediate, type = softmax} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3579, type = reshape} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+W20240624 16:14:03.198807 11300 PartitionPass.cpp:6402] xir::Op{name = 3580_vaip_260, type = transpose} has been assigned to CPU: [Input and output data type should be XINT or INT, but now input data type: UINT8, output data type: UINT8].
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3563, type = Selector} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3603, type = sigmoid} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3581_vaip_261, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3582_vaip_262, type = conv2d} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3582, type = reshape} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3588, type = reshape} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = ortshared_7_1_2_0_token_264, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = :3589:3590, type = :Split} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3589, type = Selector} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3592, type = sub} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3590, type = Selector} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3593, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3594, type = add} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3595, type = add} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3599, type = sub} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = ortshared_1_0_1_9_token_273, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3598, type = div} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3600, type = concat} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3601, type = const} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3602, type = mul} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:03.198807 11300 PartitionPass.cpp:6479] xir::Op{name = 3604, type = concat} is not supported by current target. Target name: AMD_AIE2_Nx4_Overlay, target type: IPU_PHX. Assign it to CPU.
+I20240624 16:14:11.568256 11300 compile_pass_manager.cpp:643] Total device subgraph number 7, USER subgraph number 1
+I20240624 16:14:11.568256 11300 compile_pass_manager.cpp:645] Total device subgraph number 7, CPU subgraph number 5
+I20240624 16:14:11.568256 11300 compile_pass_manager.cpp:665] Total device subgraph number 7, DPU subgraph number 1, total number of PDI swaps 0
+I20240624 16:14:11.569257 11300 compile_pass_manager.cpp:721] Compile done.
+I20240624 16:14:11.697471 11300 anchor_point.cpp:443] before optimization:
+
+172 <-- identity@ --
+169 <-- identity@fuse_DPU --
+169
+after optimization:
+
+169_vaip_1390 <-- identity@combine_empty --
+169
+I20240624 16:14:11.698359 11300 anchor_point.cpp:443] before optimization:
+
+3560_post_dq <-- identity@ --
+3560_q_to_dq <-- identity@fuse_DPU --
+3560_q_to_dq
+after optimization:
+
+3560_q_to_dq_vaip_1391 <-- identity@combine_empty --
+3560_q_to_dq
+I20240624 16:14:11.698359 11300 anchor_point.cpp:443] before optimization:
+
+3530_fix <-- identity@ --
+3527 <-- identity@fuse_DPU --
+3527
+after optimization:
+
+3527_vaip_1392 <-- identity@combine_empty --
+3527
+I20240624 16:14:11.698359 11300 anchor_point.cpp:443] before optimization:
+
+3550_post_dq <-- identity@ --
+3550_q_to_dq <-- identity@fuse_DPU --
+3550_q_to_dq
+after optimization:
+
+3550_q_to_dq_vaip_1393 <-- identity@combine_empty --
+3550_q_to_dq
+I20240624 16:14:11.698359 11300 anchor_point.cpp:443] before optimization:
+
+3341_fix <-- identity@ --
+3338 <-- identity@fuse_DPU --
+3338
+after optimization:
+
+3338_vaip_1394 <-- identity@combine_empty --
+3338
+I20240624 16:14:11.699374 11300 anchor_point.cpp:443] before optimization:
+
+3540_post_dq <-- identity@ --
+3540_q_to_dq <-- identity@fuse_DPU --
+3540_q_to_dq
+after optimization:
+
+3540_q_to_dq_vaip_1395 <-- identity@combine_empty --
+3540_q_to_dq
+I20240624 16:14:11.699374 11300 anchor_point.cpp:443] before optimization:
+
+3152_fix <-- identity@ --
+3149 <-- identity@fuse_DPU --
+3149
+after optimization:
+
+3149_vaip_1396 <-- identity@combine_empty --
+3149
+[Vitis AI EP] No. of Operators :   CPU    27    IPU  1246  97.80%ResizeNorm     1 
+[Vitis AI EP] No. of Subgraphs :   CPU     5    IPU     1 Actually running on IPU     1 ResizeNorm     1
+2024-06-24 16:14:11.8744331 [W:onnxruntime:, session_state.cc:1169 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Some nodes were not assigned to the preferred execution providers which may or may not have an negative impact on performance. e.g. ORT explicitly assigns shape related ops to CPU to improve perf.
+2024-06-24 16:14:11.8811812 [W:onnxruntime:, session_state.cc:1171 onnxruntime::VerifyEachNodeIsAssignedToAnEp] Rerunning with verbose output on a non-minimal build will show node assignments.
+- print the current execution provider ['VitisAIExecutionProvider', 'CPUExecutionProvider']
+<class 'list'>
+- Name: img_data, Shape: [1024, 1024, 4]
+
+- Input Image: ..\test.jpg
+input dat e2e
+iteration
+╒════════════╤══════════╤════════╤════════╤════════╤════════╕
+│   Class-ID │    Score │   xmin │   ymin │   xmax │   ymax │
+╞════════════╪══════════╪════════╪════════╪════════╪════════╡
+│         15 │ 0.932453 │    227 │    358 │    648 │    333 │
+╘════════════╧══════════╧════════╧════════╧════════╧════════╛
+2024-06-24 16:14:12.5242394 [W:onnxruntime:Default, vitisai_execution_provider.cc:74 onnxruntime::VitisAIExecutionProvider::~VitisAIExecutionProvider] Releasing the FlexML EP pointer in Vitis AI EP

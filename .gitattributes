@@ -1,0 +1,5 @@
+HacksterAMD_ForestFire_AI/model/tf_model.onnx filter=lfs diff=lfs merge=lfs -text
+HacksterAMD_ForestFire_AI/model/TFRecord/train-forest-fire.tfrecord filter=lfs diff=lfs merge=lfs -text
+HacksterAMD_ForestFire_AI/TEST/PyTorch/datasets/train-forest-fire.tfrecord filter=lfs diff=lfs merge=lfs -text
+HacksterAMD_ForestFire_AI/TEST/Tensorflow/datasets/train-forest-fire.tfrecord filter=lfs diff=lfs merge=lfs -text
+HacksterAMD_ForestFire_AI/TEST/YoloV8/model/tf_model.onnx filter=lfs diff=lfs merge=lfs -text
